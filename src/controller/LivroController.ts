@@ -14,10 +14,11 @@ export class LivroController implements LivroRepository{
     listarLivroPorID(id: number): void {
         const buscaLivro = this.buscarNoArray(id);
 
-        if(buscaLivro !== null)
+        if(buscaLivro != null){
             buscaLivro.visualizar();
-        else
+        }else{
             console.log("\nLivro não encontrado!");
+        }
     }
 
     cadastrarLivro(livro: Livro): void {
@@ -26,9 +27,9 @@ export class LivroController implements LivroRepository{
     }
 
     atualizarLivro(livro: Livro): void {
-        const buscaLivro = this.buscarNoArray(livro.id);
+        let buscaLivro = this.buscarNoArray(livro.id);
 
-        if(buscaLivro !== null) {
+        if(buscaLivro != null) {
             this.listaLivros[this.listaLivros.indexOf(buscaLivro)] = livro;
             console.log("Livro Atualizado com Sucesso!");
         }else{
@@ -43,7 +44,7 @@ export class LivroController implements LivroRepository{
             this.listaLivros.splice(this.listaLivros.indexOf(buscaLivro), 1);
             console.log("\nLivro Deletado com Sucesso!");
         }else
-            console.log("\Livro não encontrado!");
+            console.log("\nLivro não encontrado!");
     }
 
     // Métodos Auxiliares
@@ -55,11 +56,10 @@ export class LivroController implements LivroRepository{
     public buscarNoArray(id: number): Livro | null {
         for(let livro of this.listaLivros){
             if(livro.id === id)
-                return livro;
+                return livro;          
         }
 
         return null;
     }
-
 
 }

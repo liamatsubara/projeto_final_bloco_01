@@ -129,7 +129,7 @@ export function main() {
 
                     let livro = livros.buscarNoArray(id);
 
-                    if (livro !== null){
+                    if (livro != null){
 
                         console.log("\nDigite o Nome Atualizado do Livro: ");
                         nome = readlinesync.question('');
@@ -158,14 +158,14 @@ export function main() {
                                 console.log("\nDigite a Quantidade em Estoque Atualizada do Livro: ");
                                 quantidade = readlinesync.questionInt('');
     
-                                livros.atualizarLivro(new LivroFisico(livros.gerarNumero(), nome, autor, dataPublicacao, editora, numPaginas, preco, tipo, dimensoes, quantidade));
+                                livros.atualizarLivro(new LivroFisico(id, nome, autor, dataPublicacao, editora, numPaginas, preco, tipo, dimensoes, quantidade));
                             break;
         
                             case 2:
                                 console.log("\nDigite o Tamanho do Arquivo Atualizado do Livro (KB): ");
                                 tamanhoArquivo = readlinesync.questionInt('');
     
-                                livros.atualizarLivro(new LivroDigital(livros.gerarNumero(), nome, autor, dataPublicacao, editora, numPaginas, preco, tipo, tamanhoArquivo));
+                                livros.atualizarLivro(new LivroDigital(id, nome, autor, dataPublicacao, editora, numPaginas, preco, tipo, tamanhoArquivo));
                             break;
                         }
 
