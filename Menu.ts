@@ -1,7 +1,16 @@
 import readlinesync = require("readline-sync");
 import { colors } from "./src/util/Colors";
+import { LivroFisico } from "./src/model/LivroFisico";
+import { LivroDigital } from "./src/model/LivroDigital";
 
 export function main() {
+
+    // Testes para visualização dos dados
+    const livro1 = new LivroFisico(1, "Feliz Ano Velho", "Marcelo Rubens Paiva", "04/08/2015", "Alfaguara", 272, 58, 1, "23.37 x 14.99 x 1.52 cm", 300);
+    livro1.visualizar();
+
+    const livro2 = new LivroDigital(2, "Biblioteca da Meia-Noite", "Matt Haig", "30/09/2021", "Bertrand", 366, 15.95, 2, 3590);
+    livro2.visualizar();
 
     let opcao: number;
 
