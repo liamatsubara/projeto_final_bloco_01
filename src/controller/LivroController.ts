@@ -31,9 +31,9 @@ export class LivroController implements LivroRepository{
 
         if(buscaLivro != null) {
             this.listaLivros[this.listaLivros.indexOf(buscaLivro)] = livro;
-            console.log("Livro Atualizado com Sucesso!");
+            console.log("\nLivro Atualizado com Sucesso!");
         }else{
-            console.log("\nOiLivro não Encontrado!");
+            console.log("\nLivro não Encontrado!");
         }            
     }
 
