@@ -1,3 +1,5 @@
+import { colors } from "../util/Colors";
+
 export abstract class Livro{
 
     private _id: number;
@@ -103,7 +105,7 @@ export abstract class Livro{
 
         console.log('\n***********************************************');
         console.log("");
-        console.log('Dados do Livro:');
+        console.log(colors.fg.yellow,'Dados do Livro:', colors.reset);
         console.log("");
         console.log('***********************************************');
         console.log(`ID do Livro: ${this._id}`);
